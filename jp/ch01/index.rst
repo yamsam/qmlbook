@@ -1,5 +1,6 @@
+﻿
 =========
-Meet Qt 5
+Qt 5を始めよう
 =========
 
 .. sectionauthor:: `jryannel <https://github.com/jryannel>`_
@@ -8,69 +9,69 @@ Meet Qt 5
 
 .. note::
 
-    The source code of this chapter can be found in the `assets folder <../../assets>`_.
+    この章のソースコードはこちらにあります `assets folder <../../assets>`_.
 
-This book shall provide you a walk through the different aspect of application development using Qt version 5.x. It focuses on the new Qt Quick technology but also provides necessary information of writing C++ back-ends and extension for Qt Quick.
+この本はQtバージョン5.xを用いたアプリケーション開発における様々な側面を紹介します。新技術Qt Quickを中心に、C++によるQt Quickのバックエンドや拡張の開発に必要な情報も紹介します。
 
-This chapter provides a high level overview of Qt 5. It shows the different application models available for developers and a Qt 5 showcase application to get a sneak preview of things to come. Additionally the chapter aims to provide a wide overview of the Qt 5 content and how to get in touch with the makers of Qt 5.
+この章ではQt 5の全体像を説明します。開発者の参考になるアプリケーションモデル、そして今後紹介することになるQt 5アプリケーションの見本をいち早くご紹介します。また、Qt5の中身の大まかな概要、および開発者との交流方法も紹介します。
 
 
-Preface
+はじめに
 =======
 
-.. rubric:: History
+.. rubric:: 歴史
 
-Qt 4 has evolved since 2005 and provided a solid ground for thousands of applications and even full desktop and mobile systems. The usage patterns of computer users changed in the recent years. From stationary PCs towards portable notebook and nowadays mobile computers. The classical desktop is more and more replaced with mobile touch-based always connected screens. With it the desktop UX paradigms also changes. Where as in the past Windows UI has dominated the world we spend more time nowadays on other screens with another UI language.
+Qt 4は2005年以来進化をつづけ、数千のアプリケーション、フルデスクトップおよびモバイルシステムへ強固な地盤を提供してきました。近年、コンピューターの使用形態は、据え置きPCから持ち運びできるノートブックへ、そして今ではモバイルコンピュータへと変遷しています。今や古なじみのデスクトップは、スクリーンに常時接続されたタッチベースのモバイルへとますます置き換わっています。それと共にデスクトップUXの設計思想も変わりました。かつてのWindows UIが主流であった時代に比べると、いまや開発者は多種多様なスクリーンとそのUI言語の中で多大の時間を費やしています。
 
-Qt 4 was designed to satisfy the desktop world to have a coherent set of UI widgets available on all major platforms. The challenge for Qt users has changed today and it lies more to provide a touch-based user interface for a customer driven user interface and to enable modern user interface on all major desktop and mobile systems. Qt 4.7 started to introduce the Qt Quick technology which allows users to create a set of user interface components from simple elements to achieve a complete new UI, driven by customer demands.
+Qt 4は主要な全てのプラットフォーム上で動作する一貫したUIウィジェットを持つ、デスクトップ開発の要求を満たすべく設計されました。今日、Qtユーザーの課題は変わりました。顧客が求めるタッチベースのユーザインタフェース、そして全ての主要なデスクトップとモバイルシステム上で動作するモダンなユーザーインターフェイスを作ることです。Qt 4.7は、Qt Quickテクノロジーを導入するために始まりました。Qt Quickはこうした顧客の要求に答える全く新しいUIを実現するための、シンプルな要素から構成されたユーザーインターフェースのコンポーネント群です。
 
-Qt 5 Focus
+Qt 5の狙い
 ---------
 
-Qt 5 is a complete refreshing of the very successful Qt 4 release. With Qt 4.8, the Qt 4 release is almost 7 years old. It's time to make an amazing toolkit even more amazing. Qt 5 is focused on the following:
+Qt 5はこれまでの成功してきたQt 4リリースを一新したものです。Qt 4.8で、すでにQt 4のリリースは約7年間に及びました。そして今、さらなる素晴らしいツールキットを作る時がきました。Qt5は以下の項目に重点を置いて開発されています。
 
-* **Outstanding Graphics**: Qt Quick 2 is based on OpenGL (ES) using a scene graph implementation. The recomposed graphics stack allows a new level of graphic effects combined with an ease of use never seen before in this field.
+* **優れたグラフィックス**: Qt Quick 2はOpenGL(ES)をベースとしたシーングラフを実装しています。再構成されたグラフィックススタックにより、この分野では前例のない使い易さを兼ね備えたこれまでにない次元のグラフィックエフェクトを実現します。
 
-* **Developer Productivity**: QML and JavaScript are the primary means for UI creation. The back-end will be driven by C++. The split between JavaScript and C++ allows a fast iteration for front-end developers concentrating on creating beautiful user interfaces and back-end C++ developers concentrating on stability, performance and extending the runtime.
+* **開発者の生産性**: UI制作の基本言語はQMLとJavaScriptです。バックエンドはC++で作成されます。JavaScriptとC ++の間の分割は高速なイタレーションを実現します。フロントエンドの開発者は優れたユーザーインターフェースの開発に、バックエンドのC++開発者は安定性とパフォーマンス、そしてランタイム拡張へとそれぞれ専念できるからです。 
 
-* **Cross-platform portability**: With the consolidated Qt Platform Abstraction, it is now possible to port Qt to a wider range of platforms easier and faster. Qt 5 is structured around the concept of Qt Essentials and Add-ons, which allows OS developer to focus on the essentials modules and leads to a smaller runtime altogether.
+* **クロスプラットフォームの移植性**:統合されたQtプラットフォームの抽象化により、広範囲のプラットフォームへの移植が迅速かつ簡単に行えるようになりました。Qt 5はQt Essentials とAddonsにより構成されています。これによりOS開発者はモジュール開発に専念すると同時に、ランタイムの小型化を可能にします。
 
-* **Open Development**: Qt is now a truly open-governance project hosted at `qt.io <http://qt.io>`_. The development is open and community driven.
+* **Open Development**: Qtは現在、 `qt.io <http://qt.io>`_ に主催されるオープンソースガバナンスプロジェクトです。 開発はオープンなコミュニティによる運営が行われています。
 
 
 
-Qt 5 Introduction
+Qt5 入門
 =================
 
 
 Qt Quick
 --------
 
-Qt Quick is the umbrella term for the user interface technology used in Qt 5. Qt Quick itself is a collection of several technologies:
+Qt Quickとは、Qt 5で用いられているユーザインターフェース技術の包括的な用語です。Qt Quickそのものは次のテクノロジーの集りです。
 
-* QML - Markup language for user interfaces
-* JavaScript - The dynamic scripting language
-* Qt C++ - The highly portable enhanced c++ library
+* QML - ユーザインタフェースのためのマークアップ言語です
+* JavaScript - 動的なスクリプト言語です
+* Qt C ++ - 移植性に優れた強力なC ++ライブラリです
 
 .. figure:: assets/qt5_overview.png
 
 
-Similar to HTML, QML is a markup language. It is composed of tags called elements in Qt Quick enclosed in curly brackets ``Item {}``. It was designed from the ground up for the creation of user interfaces, speed and easier reading for developers. The user interface can be enhanced using JavaScript code. Qt Quick is easily extendable with your own native functionality using Qt C++. In short the declarative UI is called the front-end and the native parts are called the back-end. This allows you to separate the computing intensive and native operation of your application from the user interface part.
+QMLはHTMLと同じマークアップ言語です。``Item {}`` のように中括弧で囲まれたエレメントと呼ばれるタグから構成されます。QMLは素早く簡単にユーザインタフェースの作成ができる可読性に優れた言語として一から設計されました。またJavaScriptを使ってユーザーインターフェースを強化することもできます。Qt Qtuickは、Qt C++で作成したネイティブの独自機能を用いて簡単に拡張することができます。つまり、宣言型のUIであるQMLがフロントエンドとなり、一方のQt C++によるネイティブ部分がバックエンドになります。これによって開発者はユーザインタフェースから計算負荷の高いアプリケーションのネイティブ機能を分離させることができます。
 
-In a typical project the front-end is developed in QML/JavaScript and the back-end code, which interfaces with the system and does the heavy lifting, is developed using Qt C++. This allows a natural split between the more design oriented developers and the functional developers. Typically the back-end is tested using Qt own unit testing framework and exported for the front-end developers to be used.
+一般的なプロジェクトでは、フロントエンドはQMLとJavaScriptで開発され、システムとの仲介と力仕事を担当するバックエンドコードはQt C++で開発されます。この結果、デザインと機能の自然な分離が可能になります。典型的なバックエンドはQt独自のユニットテストフレームワークでテストされて、利用者となるフロントエンドの開発者に提供されます。
 
 
-Digesting an User Interface
+ユーザーインターフェイスの解説
 ---------------------------
 
-Let's create a simple user interface using Qt Quick, which showcases some aspects of the QML language. At the end we will have a paper windmill with rotating blades.
+ではQt Quickを使って簡単なユーザーインターフェースを作りましょう。この例を通じてQML言語の特徴を紹介します。最後には回転する羽をもった風車が完成します。
 
 
 .. figure:: assets/scene.png
     :scale: 50%
 
 
-We start with an empty document called ``main.qml``. All QML files will have the ending ``.qml``. As a markup language (like HTML) a QML document needs to have one and only one root element, which in our case is the ``Image`` element with a width and height based on the background image geometry:
+まず空のファイル ``main.qml`` をつくります。QMLファイルの拡張子は ``.qml`` です。マークアップ言語であるQMLファイルは、ルートエレメントを一つを持ちます。次の ``Image`` エレメントは背景画像に基づく幅と高さを持ちます。
 
 .. code-block:: qml
 
@@ -81,7 +82,7 @@ We start with an empty document called ``main.qml``. All QML files will have the
         source: "images/background.png"
     }
 
-As QML does not make any restriction which element type is the root element we use an ``Image`` element with the source property set to our background image as the root element.
+QMLではルートエレメントの型に制限がありません。今回はルートエレメントとして、sourceプロパティに背景画像がセットされた ``Image`` エレメントを使うことにします。 
 
 
 .. figure:: src/showcase/images/background.png
@@ -89,20 +90,20 @@ As QML does not make any restriction which element type is the root element we u
 
 .. note::
 
-    Each element has properties, e.g. an image has a ``width``, ``height`` but also other properties like a ``source`` property.  The size of the image element is automatically deduced from the image size. Otherwise we would need to set the ``width`` and ``height`` property to some useful pixel values.
+ エレメントはプロパティを持ちます。たとえばImageエレメントには ``width`` や ``height`` のほかにも ``source`` などのプロパティがあります。imageエレメントのサイズは、画像の大きさから自動的に求まります。さもなければ ``width`` と ``height`` プロパティに適切なピクセル値を設定する必要があります。
 
-    The most standard elements are located in the ``QtQuick`` module which we include in the first line with the import statement.
+ 冒頭のimport文でインクルードした ``QtQuick`` モジュールには標準のエレメントが含まれています。
 
-    The ``id`` special property is optional and contains an identifier to reference this element later in other places in the document. Important: An ``id`` property cannot be changed after it has been set and it cannot be set during runtime. Using ``root`` as the id for the root-element is just a habit by the author and makes referencing the top-most element predictable in larger QML documents.
+ 特別なプロパティである ``id`` は、必須ではありませんが、ドキュメント内の他の場所でこの要素を参照するための識別子です。重要： ``id`` プロパティをいったんセットした後に変更したり、実行中にセットすることができません。筆者はルートエレメントのidとして ``root`` をよく使います。大規模なQMLドキュメントであっても簡単に最上位のエレメントを参照できるからです。
 
-The foreground elements pole and pin wheel of our user interface are placed as separate images.
+ユーザーインターフェースの前景となる支柱と風車のエレメントは別々の画像として配置します。
 
 .. figure:: src/showcase/images/pole.png
 .. figure:: src/showcase/images/pinwheel.png
 
-The pole needs to be placed in the horizontal center of the background towards the bottom. And the pinwheel can be placed in the center of the background.
+支柱は背景に対して水平方向の中心、底を一致させて配置する必要があります。風車は中央に配置します。
 
-Normally your user interface will be composed of many different element types and not only image elements like in this example.
+この例ではimageエレメントしか使用していませんが、一般的なユーザーインターフェースは様々なタイプのエレメントから構成されます。
 
 
 .. code-block:: qml
@@ -127,22 +128,22 @@ Normally your user interface will be composed of many different element types an
 
 
 
-To place the pin wheel at the central location we use a complex property called ``anchor``. Anchoring allows you to specify geometric relations between parent and sibling objects. E.g. Place me in the center of another element ( ``anchors.centerIn: parent`` ). There are left, right, top, bottom, centerIn, fill, verticalCenter and horizontalCenter relations on both ends. Sure, they need to match.  It does not make sense to anchor my left side to the top side of an element.
+風車を中央の位置に配置するために、 ``anchor（アンカー）`` と呼ばれる特別なプロパティを使用します。anchorを使えば、親や兄弟オブジェクトの間の幾何学的な相対位置を指定することができます。例えば親エレメントの中央にエレメントを配置する場合は（ ``anchors.centerIn: parent`` ）とします。使用可能な相対位置の指定は、オブジェクトの端のそれぞれについてleft, right, top, bottom, centerIn, fill, verticalCenterとhorizontalCenterが用意されています。アンカーは正確に一致させる必要があり、エレメントのtopとleftをアンカーしても意味がありません。
 
-So we set the pinwheel to be centered in the parent our background.
-
-.. note::
-
-    Sometime you will need to make small adjustments on the exact centering. This would be possible with ``anchors.horizontalCenterOffset`` or with ``anchors.verticalCenterOffset``. Similar adjustments properties are also available to all the other anchors. Please consult the documentation for a full list of anchors properties.
+これで風車を背景の中央に配置できました。
 
 .. note::
 
-    Placing an image as a child element of our root element (the ``Image`` element) shows an important concept of a declarative language. You describe the user interface in the order of layers and grouping, where the topmost layer (our rectangle) is drawn first and the child layers are drawn on top of it in the local coordinate system of the containing element.
+ 時には中心からの位置を微調整したいことがあります。これは ``anchors.horizo​​ntalCenterOffset`` または ``anchors.verticalCenterOffset`` で行えます。他のアンカーでも同様の位置調節プロパティが利用できます。アンカープロパティの全リストはマニュアルを参照してください。
 
-To make the showcase a little bit more interesting, we would like to make the scene interactive. The idea is to rotate the wheel when the user pressed the mouse somewhere in the scene.
+.. note::
+
+ この例では ``Image`` エレメントをルートエレメントの子エレメントとして配置しました。これは宣言型言語の重要な概念を表しています。宣言型言語では、ユーザーインターフェースはレイヤーの順列とグループとして記述されます。まず最上層（長方形）のレイヤーが最初に描画され、次にその子エレメントがローカル座標系上でその上に描画されます。
+
+例をすこし面白くするためにシーンをインタラクティブにしましょう。ユーザーがシーンのどこかでマウスを押したときにホイールを回転させることにします。
 
 
-We use the ``MouseArea`` element and make it as big as our root element.
+``MouseArea`` エレメントを使い、大きさをルートエレメントと同じ にします。
 
 .. code-block:: qml
 
@@ -156,17 +157,17 @@ We use the ``MouseArea`` element and make it as big as our root element.
         ...
     }
 
-The mouse area emit signals when a user clicks inside it covered area. You can hook onto this signal overriding the ``onClicked`` function. In this case the reference the wheel image and change its rotation by +90 degree.
+このエレメントはユーザーが範囲領域内をクリックしたときにシグナルを発行します。``onClicked`` 関数をオーバーライドするとこのシグナルにフックすることができます。この例では、エレメントwheelのrotationを+90°に変更します。
 
 .. note::
 
-    This works for every signal, the naming is ``on`` + ``SignalName`` in title cases. Also all properties emit a signal when their value changed. The naming is:
+ この仕組みはすべてのシグナルで共通しています。命名規則は先頭を大文字にして ``on`` + ``SignalName`` です。プロパティは値が変更されたときにシグナルを発行します。命名規則は次のとおりです。
 
         ``on`` + ``PropertyName`` + ``Changed``
 
-    If a ``width`` property is changing you can observe it with ``onWidthChanged: print(width)`` for example.
+ 例えば ``width`` プロパティが変化した場合、 ``onWidthChanged: print(width)`` で値を取得することができます。
 
-Now the wheel will rotate, but it is still not fluid yet. The rotation property changes immediately. What we would like that the property changes by 90 degree over time. Now animations come into play. An animation defines how a property change is distributed over a duration. To enable this we use an animation type called property behavior. The ``Behaviour`` does specify an animation for a defined property for every change applied to that property. In short every time the property changes, the animation is run. This is only one of several ways of declaring an animation in QML.
+これでwheelは回転するようになりましたが、まだ動きが滑らかではありません。rotationプロパティが即座に変更されてしまうからです。そこでプロパティの値が90°までゆっくりと変化するようにしたいと思います。ここでアニメーションの出番になります。アニメーションはプロパティの変更が、ある期間どのように分割されるかを定義します。これを可能にするには、プロパティのふるまい​（behaviour）と呼ばれるアニメーションタイプを使用します。 ``Behaviour`` は定義済みプロパティへの変更に対応するアニメーションを指定します。要するにプロパティが変更されるたびにアニメーションが実行されます。この方法は数あるアニメーション定義方法の内の1つになります。
 
 .. code-block:: qml
 
@@ -182,58 +183,58 @@ Now the wheel will rotate, but it is still not fluid yet. The rotation property 
         }
     }
 
-Now whenever the property rotation of the wheel changes it will be animated using a ``NumberAnimation`` with a duration of 250 ms. So each 90 degree turn will take 250 ms.
+これでwheelのrotationプロパティが変化するたびに、 ``NumberAnimation`` によって250ミリ秒間のアニメーションが行われます。つまり、250ミリ秒かかって90°回転します。
 
 .. figure:: assets/scene2.png
     :scale: 50%
 
-.. note:: You will not actually see the wheel blurred. This is just to indicate the rotation. But a blurred wheel is in the assets folder. Maybe you want to try to use that.
+.. note:: wheelはブラー表示されません。単に回転するだけです。ブラー効果のついたwheelはアッセットフォルダにあります。よろしければ試してみて下さい。
 
 
-Now the wheel looks already much better. I hope this has given you a short idea of how Qt Quick programming works.
+これでwheelの見栄えがよくなりました。QtQuickプログラミングのコツが少しはつかめたでしょうか。
 
-Qt Building Blocks
+Qt の構成要素
 ==================
 
-Qt 5 consists of a large amount of modules. A module in general is a library for the developer to use. Some modules are mandatory for a Qt enabled platform. They form a set called *Qt Essentials Modules*. Many modules are optional and form the *Qt Add-On Modules*. It's expected that the majority of developers will not have the need to use them, but it's good to know them as they provide invaluable solutions to common challenges.
+Qt 5は多くのモジュールから構成されています。モジュールとは開発者が使うライブラリです。Qt対応プラットフォームで動作させるために必須のモジュールがあります。これらは *Qt Essentialsモジュール* と呼ばれます。必須ではないモジュールは *Qt Addonモジュール* と呼ばれます。開発者の大半は使用する必要がないと思いますが、共通課題の優れた解決策として知っておいて損はありません。
 
-Qt Modules
+Qt モジュール
 ---------------------
 
-The Qt Essentials modules are mandatory for a Qt enabled platform. They offer the foundation to develop a modern Qt 5 Application using Qt Quick 2.
+Qt EssentialsはQt対応プラットフォームの必須モジュール群です。Qt Quick2を使用したモダンなQt 5アプリケーションを開発するための基盤となります。
 
 .. rubric:: Core-Essential Modules
 
-The minimal set of Qt 5 modules to start QML programming.
+QMLプログラミングを開始するための最小限のモジュールです。
 
 .. list-table::
     :widths: 20 80
     :header-rows: 1
 
-    *   - Module
-        - Description
+    *   - モジュール
+        - 説明
     *   - Qt Core
-        - Core non-graphical classes used by other modules
+        - 中心となる非グラフィクスのクラス群。他のモジュールで使用される
     *   - Qt GUI
-        - Base classes for graphical user interface (GUI) components. Includes OpenGL.
+        - グラフィカルユーザーインターフェース(GUI)のクラス群。OpenGLを含む
     *   - Qt Multimedia
-        - Classes for audio, video, radio and camera functionality.
+        - 音声、動画、ラジオ、カメラのクラス群
     *   - Qt Network
-        - Classes to make network programming easier and more portable.
+        - ネットワークプログラミングを容易かつよりポータブルにするためのクラス群
     *   - Qt QML
-        - Classes for QML and JavaScript languages.
+        - QMLとJavaScriptのためのクラス群.
     *   - Qt Quick
-        -  declarative framework for building highly dynamic applications with custom user interfaces.
+        -  カスタムユーザーインターフェースをそなえた高度にダイナミックなアプリケーションを構築するための宣言型フレームワーク
     *   - Qt SQL
-        - Classes for database integration using SQL.
+        - SQLを使ったデータベース統合のクラス.
     *   - Qt Test
-        - Classes for unit testing Qt applications and libraries.
+        - Qtアプリケーションとライブラリをユニットテストするためのクラス群.
     *   - Qt WebKit
-        - Classes for a WebKit2 based implementation and a new QML API. See also Qt WebKit Widgets in the add-on modules.
+        - WebKit2をベースとした実装と新しいQMLのAPIのクラス群。 アドオンモジュールのQt WebKitウィジェットを併せて参照してください.
     *   - Qt WebKit Widgets
-        - WebKit1 and QWidget-based classes from Qt 4.
+        - Qt 4で実装されたWebKit1とQWidgetベースのクラスです。 
     *   - Qt Widgets
-        - Classes to extend Qt GUI with C++ widgets.
+        - C++ウィジェットでQtGuiを拡張するためのクラスです。
 
 
 .. digraph:: essentials
@@ -246,49 +247,49 @@ The minimal set of Qt 5 modules to start QML programming.
     QtSql -> QtCore
 
 
-.. rubric:: Qt Addon Modules
+.. rubric:: Qt Addon モジュール
 
-Besides the essential modules, Qt offers additional modules for software developers, which are not part of the release. Here is a short list of add-on modules available.
+Qtは基本モジュールのほかに、ソフトウェア開発者のための追加モジュールを提供しています。これらはQtのリリースには含まれません。以下は利用可能なアドオンモジュールのリストです。
 
-* Qt 3D - A set of APIs to make 3D graphics programming easy and declarative.
-* Qt Bluetooth - C++ and QML APIs for platforms using Bluetooth wireless technology.
-* Qt Contacts - C++ and QML APIs for accessing addressbooks / contact databases
-* Qt Location - Provides location positioning, mapping, navigation and place search via QML and C++ interfaces. NMEA backend for positioning
-* Qt Organizer - C++ and QML APIs for accessing organizer events (todos, events, etc.)
+* Qt 3D - 3Dグラフィックスプログラミングを簡単にするためのAPIのセット。
+* Qt Bluetooth - Bluetoothワイヤレステクノロジーを使用するプラットフォームのためのC ++とQMLのAPI。
+* Qt Contacts - アドレス帳/連絡先データベースにアクセスするためのC ++とQMLのAPI 
+* Qt Location - 位置測位、マッピング、ナビゲーションおよび場所検索のためのQMLとC++のインターフェース。位置測位のためのNMEAバックエンド
+* Qt Organizer - オーガナイザーイベント(todoやイベントなど)にアクセスするためのC ++とQMLのAPI
 * Qt Publish and Subscribe
-* Qt Sensors - Access to sensors via QML and C++ interfaces.
-* Qt Service Framework -  Enables applications to read, navigate and subscribe to change notifications.
-* Qt System Info - Discover system related information and capabilities.
-* Qt Versit - Support for vCard and iCalendar formats
-* Qt Wayland - Linux only. Includes Qt Compositor API (server), and Wayland platform plugin (clients)
-* Qt Feedback - Tactile and audio feedback to user actions.
-* Qt JSON DB - A no-SQL object store for Qt.
+* Qt Sensors - センサーへアクセスするためのQMLとC ++インターフェース。
+* Qt Service Framework - 通知を変更するための入力、ナビゲート、登録を有効にする。
+* Qt System Info - システム関連の情報や機能を提供する。
+* Qt Versit - vCardとiCalendar形式をサポートします。
+* Qt Wayland - Linuxのみ。Qt Compositor API（サーバ）、およびWayland プラットフォームプラグイン(クライアント)が含まれています。
+* Qt Feedback - ユーザのアクションに反応する触覚と音声のフィードバック。
+* Qt JSON DB - Qt用のno-SQLオブジェクトストア。
 
 .. note::
 
-    As these modules are not part of the release the state differ between modules, depending how many contributors are active and how well it's get tested.
+ 以上のモジュールはリリースの一部ではありません。開発状況はアクティブなコントリビューターの数やテスト状況に依存するため、モジュールによって異なります。
 
-Supported Platforms
+対応プラットフォーム
 -------------------
 
-Qt supports a variety of platforms. All major desktop and embedded platforms are supported. Through the Qt Application Abstraction, nowadays it's easier to port Qt over to your own platform if required.
+Qtはさまざまなプラットフォームをサポートしています。主要なデスクトップと組み込みプラットフォームは全てサポートしています。また、Qt Application Abstractionによって独自プラットフォームへのQtの移植は簡単に行えるようになりました。
 
-Testing Qt 5 on a platform is time consuming. A sub-set of platforms was selected by the Qt Project to build the reference platforms set. These platforms are thoroughly tested through the system testing to ensure the best quality. Mind you though: no code is error free.
-
-
+Qt5のプラットフォーム上でのテストは時間がかかるものです。Qt Projectでは選別したプラットフォームの一部を標準プラットフォームとしてQt5のビルドを提供しています。これらのプラットフォームでは最高品質を確保するために、システムテストによる徹底的なテストが行われます。しかし念のために言っておきます「エラーのないコードなど存在しません」
 
 
-Qt Project
+
+
+Qt プロジェクト
 ==========
 
-From the `Qt Project wiki <http://wiki.qt.io/>`_:
+`Qt Project wiki <http://wiki.qt.io/>`_ より引用:
 
-"The Qt Project is a meritocratic consensus-based community interested in Qt. Anyone who shares that interest can join the community, participate in its decision making processes, and contribute to Qt’s development."
+「Qtのプロジェクトは、Qtに興味を持つ同志による、実力主義のコンセンサスベースのコミュニティです。Qtに関心がある誰もがコミュニティに参加し、意思決定プロセスに関わり、Qtの発展に貢献することができます」
 
-The Qt Project is an organisation which developes the open-source part of the Qt further. It forms the base for other users to contribute. The biggest contributor is DIGIA, which holds also the comercial rights to Qt.
+QtプロジェクトはQtのオープンソース部分を開発する組織です。この組織はユーザーがQtに貢献するための母体となります。最大の貢献者はQtの商業権を保持しているDIGIAです。
 
-Qt has an open-source aspect and a comercial aspect for companies. The comercial aspect is for companies which can not or will not comply with the open-source licenses. Without the comercial aspect these companies would not be able to use Qt and it would not allow DIGIA to contribute so much code to the Qt Project.
+Qtはオープンソースの側面と企業のための商業的な側面を持っています。商業的な側面は、オープンソースライセンスにできない、あるいは適応したくない企業のためにあります。しかし商業的な側面がなければ、多くの企業がQtを使用することができませんし、DIGIAがQtのプロジェクトに非常に多くのコードを貢献することもできませんでした。
 
-There are many companies world-wide, which make their living out of consultancy and product development using Qt on the various platforms. There are many open-source projects and open-source developers, which rely on Qt as their major development library. It feels good to be part of this vibrant community and to work with this awesome tools and libraries. Does it make you a better person? Maybe:-)
+世界には、様々なプラットフォーム上でQtを使用したコンサルティングや製品開発を生業とする企業がたくさんあります。主要な開発ライブラリとしてQtに依存しているオープンソースプロジェクトとオープンソースの開発者も数多く存在しています。この活気に満ちたコミュニティの一員として、この素晴らしいツールとライブラリを使って働くことは心地のいいものです。Qtプロジェクトはあなたを成長させてくれる？多分ね :-)
 
-**Contribute here: http://wiki.qt.io/**
+**ここで貢献しよう: http://wiki.qt.io/**
