@@ -53,7 +53,7 @@ Qt Quickとは、Qt 5で用いられているユーザインターフェース�
 * JavaScript - 動的なスクリプト言語です
 * Qt C ++ - 移植性に優れた強力なC ++ライブラリです
 
-.. figure:: assets/qt5_overview.png
+.. figure:: ../../en/ch01/assets/qt5_overview.png
 
 
 QMLはHTMLと同じマークアップ言語です。``Item {}`` のように中括弧で囲まれたエレメントと呼ばれるタグから構成されます。QMLは素早く簡単にユーザインタフェースの作成ができる可読性に優れた言語として一から設計されました。またJavaScriptを使ってユーザーインターフェースを強化することもできます。Qt Qtuickは、Qt C++で作成したネイティブの独自機能を用いて簡単に拡張することができます。つまり、宣言型のUIであるQMLがフロントエンドとなり、一方のQt C++によるネイティブ部分がバックエンドになります。これによって開発者はユーザインタフェースから計算負荷の高いアプリケーションのネイティブ機能を分離させることができます。
@@ -67,7 +67,7 @@ QMLはHTMLと同じマークアップ言語です。``Item {}`` のように中�
 ではQt Quickを使って簡単なユーザーインターフェースを作りましょう。この例を通じてQML言語の特徴を紹介します。最後には回転する羽をもった風車が完成します。
 
 
-.. figure:: assets/scene.png
+.. figure:: ../../en/ch01/assets/scene.png
     :scale: 50%
 
 
@@ -85,7 +85,7 @@ QMLはHTMLと同じマークアップ言語です。``Item {}`` のように中�
 QMLではルートエレメントの型に制限がありません。今回はルートエレメントとして、sourceプロパティに背景画像がセットされた ``Image`` エレメントを使うことにします。 
 
 
-.. figure:: src/showcase/images/background.png
+.. figure:: ../../en/ch01/src/showcase/images/background.png
 
 
 .. note::
@@ -98,8 +98,8 @@ QMLではルートエレメントの型に制限がありません。今回は�
 
 ユーザーインターフェースの前景となる支柱と風車のエレメントは別々の画像として配置します。
 
-.. figure:: src/showcase/images/pole.png
-.. figure:: src/showcase/images/pinwheel.png
+.. figure:: ../../en/ch01/src/showcase/images/pole.png
+.. figure:: ../../en/ch01/src/showcase/images/pinwheel.png
 
 支柱は背景に対して水平方向の中心、底を一致させて配置する必要があります。風車は中央に配置します。
 
@@ -185,7 +185,7 @@ QMLではルートエレメントの型に制限がありません。今回は�
 
 これでwheelのrotationプロパティが変化するたびに、 ``NumberAnimation`` によって250ミリ秒間のアニメーションが行われます。つまり、250ミリ秒かかって90°回転します。
 
-.. figure:: assets/scene2.png
+.. figure:: ../../en/ch01/assets/scene2.png
     :scale: 50%
 
 .. note:: wheelはブラー表示されません。単に回転するだけです。ブラー効果のついたwheelはアッセットフォルダにあります。よろしければ試してみて下さい。
